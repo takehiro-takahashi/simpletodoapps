@@ -107,13 +107,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.layer.cornerRadius = 10.0
+        cell.layer.cornerRadius = 15.0
         label = cell.contentView.viewWithTag(1) as! UILabel
         label.text = todoArray[indexPath.row]
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // todoArrayの選択されたセルの番号の配列に入っている文字を削除する
+            todoArray.remove(at: indexPath.row)
+            
+            // 配列をアプリ内へ保存する
+            UserDefaults.standard.set(todoArray, forKey: "todoArray")
+            
+            // tableのデリゲートメソッドを呼ぶ
+            table.reloadData()
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
