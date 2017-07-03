@@ -25,6 +25,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     // 選択されたセルの番号を取得する
     var count:Int = 0
     
+    // 背景画像
+    @IBOutlet var backImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         if UserDefaults.standard.object(forKey: "todoArray") != nil {
             todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
+        }
+        
+        if UserDefaults.standard.object(forKey: "imageTag") != nil {
+            let imageTag = UserDefaults.standard.string(forKey: "imageTag")
+            
+            backImageView.image = UIImage(named: imageTag! + ".jpg")
         }
         
         // テーブルを更新
