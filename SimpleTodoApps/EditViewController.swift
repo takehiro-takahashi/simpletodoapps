@@ -43,11 +43,6 @@ class EditViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    // キャンセルボタンが押された時の処理
-    @IBAction func cancel(_ sender: Any) {
-        textView.text = todoArray[selectedNumber]
-    }
-    
     
     // 保存ボタンを押された時の処理
     @IBAction func save(_ sender: Any) {
