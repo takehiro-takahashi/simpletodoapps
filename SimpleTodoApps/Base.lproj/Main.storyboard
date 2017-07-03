@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AHc-b4-Bsd" id="Cv6-0i-9Yf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qss-W2-VfO">
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="K3t-Ej-qpr">
             <objects>
-                <viewController id="uxc-Pv-C37" sceneMemberID="viewController">
+                <viewController id="uxc-Pv-C37" customClass="SettingViewController" customModule="SimpleTodoApps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="peS-wx-pZy"/>
                         <viewControllerLayoutGuide type="bottom" id="lc3-mk-Wy4"/>
@@ -157,7 +157,7 @@
         <!--編集-->
         <scene sceneID="Dhe-hJ-O1m">
             <objects>
-                <viewController id="bcC-k4-wpL" sceneMemberID="viewController">
+                <viewController id="bcC-k4-wpL" customClass="EditViewController" customModule="SimpleTodoApps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vAx-xJ-OaU"/>
                         <viewControllerLayoutGuide type="bottom" id="rVV-Hq-SCM"/>
