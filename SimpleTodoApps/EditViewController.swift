@@ -15,6 +15,9 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     var todoArray = [String]()
     
+    // 背景画像
+    @IBOutlet var backImageView: UIImageView!
+    
     // テキストを表示するエリア
     @IBOutlet var textView: UITextView!
 
@@ -32,7 +35,19 @@ class EditViewController: UIViewController, UITextViewDelegate {
             // 前の画面で選択された番号の文字を取り出し、テキストビューに反映
             textView.text = todoArray[selectedNumber]
         }
+        
+        if UserDefaults.standard.object(forKey: "imageTag") != nil {
+            let imageTag = UserDefaults.standard.string(forKey: "imageTag")
+            
+            backImageView.image = UIImage(named: imageTag! + ".jpg")
+        }
     }
+    
+    // キャンセルボタンが押された時の処理
+    @IBAction func cancel(_ sender: Any) {
+        textView.text = todoArray[selectedNumber]
+    }
+    
     
     // 保存ボタンを押された時の処理
     @IBAction func save(_ sender: Any) {
