@@ -96,7 +96,7 @@
 				TargetAttributes = {
 					6D51CD6D1F0A25280011E615 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = A2K36NS3P6;
+						DevelopmentTeam = TRTU94LD29;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -261,7 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2K36NS3P6;
+				DEVELOPMENT_TEAM = TRTU94LD29;
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.takehiro.SimpleTodoApps;
@@ -274,7 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A2K36NS3P6;
+				DEVELOPMENT_TEAM = TRTU94LD29;
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.takehiro.SimpleTodoApps;
@@ -302,6 +302,7 @@
 				6D51CD821F0A25280011E615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
