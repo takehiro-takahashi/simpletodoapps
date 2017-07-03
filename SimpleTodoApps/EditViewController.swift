@@ -51,9 +51,13 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     // 削除ボタンを押された時の処理
     @IBAction func deleteTodo(_ sender: Any) {
+        // 選択されたセルの行を削除
         todoArray.remove(at: selectedNumber)
+        
+        // 削除した内容をUserDefaultに保存
         UserDefaults.standard.set(todoArray, forKey: "todoArray")
         
+        // セルが存在しないため、一覧ページに戻る
         self.navigationController?.popViewController(animated: true)
     }
     
