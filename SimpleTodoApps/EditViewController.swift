@@ -34,6 +34,32 @@ class EditViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    // 保存ボタンを押された時の処理
+    @IBAction func save(_ sender: Any) {
+        if textView.text != todoArray[selectedNumber] {
+            todoArray[selectedNumber] = textView.text
+            UserDefaults.standard.set(todoArray, forKey: "todoArray")
+            
+            if UserDefaults.standard.object(forKey: "todoArray") != nil {
+                todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
+            }
+        }
+        
+        // 保存ボタンを押されたタイミングでキーボードを閉じる
+        textView.resignFirstResponder()
+    }
+    
+    // 削除ボタンを押された時の処理
+    @IBAction func deleteTodo(_ sender: Any) {
+        todoArray.remove(at: selectedNumber)
+        UserDefaults.standard.set(todoArray, forKey: "todoArray")
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
     // テキストビュー以外の箇所をタッチされたらキーボードを閉じる
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if textView.isFirstResponder {
