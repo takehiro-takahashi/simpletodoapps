@@ -102,7 +102,7 @@
 				TargetAttributes = {
 					6D51CD6D1F0A25280011E615 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = TRTU94LD29;
+						DevelopmentTeam = EG3FTNAAP9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -269,10 +269,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TRTU94LD29;
+				DEVELOPMENT_TEAM = EG3FTNAAP9;
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.takehiro.SimpleTodoApps;
+				PRODUCT_BUNDLE_IDENTIFIER = takehirotakahashi.me.becky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -282,10 +282,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TRTU94LD29;
+				DEVELOPMENT_TEAM = EG3FTNAAP9;
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.takehiro.SimpleTodoApps;
+				PRODUCT_BUNDLE_IDENTIFIER = takehirotakahashi.me.becky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
