@@ -64,7 +64,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="タスクを入力してください。" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-3M-Ocd">
-                                <rect key="frame" x="36" y="103" width="302.5" height="30.5"/>
+                                <rect key="frame" x="36" y="105" width="302.5" height="30.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
