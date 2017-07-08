@@ -25,8 +25,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     // 選択されたセルの番号を取得する
     var count:Int = 0
     
+    // キーボードの状態（閉じているか開いているか）False -> 閉じている
+    var keyboardFlag: Bool = false
+    
     // 背景画像
     @IBOutlet var backImageView: UIImageView!
+    
+    // タップするとキーボードを閉じるボタン
+    @IBOutlet var TapCloseKeyBoard: UIButton!
     
 
     override func viewDidLoad() {
@@ -43,6 +49,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // キーボードが出ていない時は隠す
+        TapCloseKeyBoard.isHidden = true
+        
         if UserDefaults.standard.object(forKey: "todoArray") != nil {
             todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
         }
@@ -56,6 +65,24 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         // テーブルを更新
         table.reloadData()
     }
+    
+    // MARK: - Keyboard
+    
+    // textFieldのフォーカスがOnになったらタップボタンを表示にする
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        TapCloseKeyBoard.isHidden = false
+    }
+    
+    // textFieldのフォーカスが離れたらタップボタンを非表示にする
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        TapCloseKeyBoard.isHidden = true
+    }
+    
+    // タップされるとキーボードを閉じる
+    @IBAction func tapCloseKeyBoardButton(_ sender: Any) {
+        textField.resignFirstResponder()
+    }
+    
     
     // テキストフィールドに入力された後に、enterを押されたら発動
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

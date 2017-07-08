@@ -71,6 +71,13 @@
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEC-kG-o6a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tapCloseKeyBoardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bbr-QU-4jS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -87,6 +94,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="TapCloseKeyBoard" destination="BEC-kG-o6a" id="o2Q-pv-KQ0"/>
                         <outlet property="backImageView" destination="cHj-ia-9VZ" id="qKU-Vw-Ef1"/>
                         <outlet property="table" destination="bDi-rd-B2N" id="1UC-Cm-riK"/>
                         <outlet property="textField" destination="3ia-3M-Ocd" id="z4p-Tn-tIi"/>
@@ -220,11 +228,19 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbi-Fj-uvo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tapCloseKeyBoardButton:" destination="bcC-k4-wpL" eventType="touchUpInside" id="W0a-Ks-NLr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Task" id="ium-Vz-oC1"/>
                     <connections>
+                        <outlet property="TapCloseKeyBoard" destination="sbi-Fj-uvo" id="SNn-RE-dhf"/>
                         <outlet property="backImageView" destination="GC3-ao-emC" id="CrC-Fp-oZ3"/>
                         <outlet property="textView" destination="bWH-td-Vwg" id="slj-2O-vqS"/>
                     </connections>

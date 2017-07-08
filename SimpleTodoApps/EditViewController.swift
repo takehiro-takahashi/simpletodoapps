@@ -20,13 +20,18 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     // テキストを表示するエリア
     @IBOutlet var textView: UITextView!
-
+    
+    // タップするとキーボードを閉じるボタン
+    @IBOutlet var TapCloseKeyBoard: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        TapCloseKeyBoard.isHidden = true
         
         // todoArrayアプリ内から選択されたセルの行を取得する
         if UserDefaults.standard.object(forKey: "todoArray") != nil {
@@ -42,6 +47,24 @@ class EditViewController: UIViewController, UITextViewDelegate {
             backImageView.image = UIImage(named: imageTag! + ".jpg")
         }
     }
+    
+    // MARK: - keyboard
+    
+    // textFieldのフォーカスがOnになったらタップボタンを表示にする
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        TapCloseKeyBoard.isHidden = false
+    }
+    
+    // textFieldのフォーカスが離れたらタップボタンを非表示にする
+    func textViewDidEndEditing(_ textView: UITextView) {
+        TapCloseKeyBoard.isHidden = true
+    }
+    
+    // タップされるとキーボードを閉じる
+    @IBAction func tapCloseKeyBoardButton(_ sender: Any) {
+        textView.resignFirstResponder()
+    }
+    
     
     // 保存ボタンを押された時の処理
     @IBAction func save(_ sender: Any) {
