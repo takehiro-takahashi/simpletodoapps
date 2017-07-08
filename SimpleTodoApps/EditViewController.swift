@@ -73,7 +73,6 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     
     
-    
     // テキストビュー以外の箇所をタッチされたらキーボードを閉じる
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if textView.isFirstResponder {
@@ -83,6 +82,7 @@ class EditViewController: UIViewController, UITextViewDelegate {
     }
     
 
+    // メモリーの解放
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
