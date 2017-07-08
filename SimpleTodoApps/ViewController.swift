@@ -87,6 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         performSegue(withIdentifier: "edit", sender: nil)
     }
     
+    // セルを選択された時の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit" {
             let editVC:EditViewController = segue.destination as! EditViewController
@@ -96,14 +97,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         }
     }
     
+    // セルをいくつ返すのか。通常は一つ。
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // セルをいくつ返すのか。
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // todoArrayに入っているtodoの数だけセルを返す
         return todoArray.count
     }
     
+    // 各セルに対して、データを表示する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -114,6 +119,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         return cell
     }
     
+    // セルをスライドしたときの処理
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // todoArrayの選択されたセルの番号の配列に入っている文字を削除する
