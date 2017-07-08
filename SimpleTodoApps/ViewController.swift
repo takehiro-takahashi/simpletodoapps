@@ -93,7 +93,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         // 空白文字を削除する
         textField.text! = textField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        print(textField.text!)
         
         if textField.text! != "" {
             // todo配列の中にTextFieldに入力されたTodoを入れる
