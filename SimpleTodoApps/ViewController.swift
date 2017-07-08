@@ -59,6 +59,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     
     // テキストフィールドに入力された後に、enterを押されたら発動
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            // textFieldの中身が殻だった場合、キーボードをそっと閉じる
+            textField.resignFirstResponder()
+            return false
+        }
         // todo配列の中にTextFieldに入力されたTodoを入れる
         todoArray.append(textField.text!)
         
