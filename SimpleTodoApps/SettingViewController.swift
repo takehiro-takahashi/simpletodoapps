@@ -37,6 +37,14 @@ class SettingViewController: UIViewController {
         scrollView.contentSize = vc.bounds.size
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // 一覧画面から、背景を変更ボタンを押された際に、一覧画面で使われている背景を設定画面で表示
+        if UserDefaults.standard.object(forKey: "imageTag") != nil {
+            let imageTag = UserDefaults.standard.string(forKey: "imageTag")
+            backImageView.image = UIImage(named: imageTag! + ".jpg")
+        }
+    }
+    
     func selectedImage(sender: UIButton) {
         // 画像をUIImageViewに反映する
         backImageView.image = UIImage(named: String(sender.tag) + ".jpg")
