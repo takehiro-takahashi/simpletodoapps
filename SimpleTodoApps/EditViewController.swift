@@ -69,7 +69,7 @@ class EditViewController: UIViewController, UITextViewDelegate {
     // 保存ボタンを押された時の処理
     @IBAction func save(_ sender: Any) {
         // 正規表現で、改行文字を空白文字に変換する
-        textView.text! = textView.text!.replacingOccurrences(of: "\r\n|\n", with: "", options: NSString.CompareOptions.regularExpression, range: nil)
+        textView.text! = textView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // textViewの中身が殻だった場合、削除
         if textView.text! == "" {

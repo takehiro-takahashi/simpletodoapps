@@ -86,26 +86,31 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     
     // テキストフィールドに入力された後に、enterを押されたら発動
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.text == "" {
-            // textFieldの中身が殻だった場合、キーボードをそっと閉じる
-            textField.resignFirstResponder()
+        // 何も無ければfalse
+        if textField.text!.isEmpty {
             return false
         }
-        // todo配列の中にTextFieldに入力されたTodoを入れる
-        todoArray.append(textField.text!)
         
-        UserDefaults.standard.set(todoArray, forKey: "todoArray")
+        // 空白文字を削除する
+        textField.text! = textField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        print(textField.text!)
         
-        if UserDefaults.standard.object(forKey: "todoArray") != nil {
-            todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
+        if textField.text! != "" {
+            // todo配列の中にTextFieldに入力されたTodoを入れる
+            todoArray.append(textField.text!)
             
-            textField.text = ""
-            table.reloadData()
+            UserDefaults.standard.set(todoArray, forKey: "todoArray")
+            
+            if UserDefaults.standard.object(forKey: "todoArray") != nil {
+                todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
+                
+                textField.text = ""
+                table.reloadData()
+            }
+            
+            // 改行ボタンが押されたらキーボードを閉じる
+            textField.resignFirstResponder()
         }
-        
-        // 改行ボタンが押されたらキーボードを閉じる
-        textField.resignFirstResponder()
-        
         return true
     }
     
