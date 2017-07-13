@@ -78,17 +78,33 @@ class EditViewController: UIViewController, UITextViewDelegate {
             self.navigationController?.popViewController(animated: true)
             return
         }
+        
+        // テキストビューの中身と、元のデータを比較して、テキストが変更されていれば保存処理を実行する。
         if textView.text != todoArray[selectedNumber] {
             todoArray[selectedNumber] = textView.text
             UserDefaults.standard.set(todoArray, forKey: "todoArray")
             
             if UserDefaults.standard.object(forKey: "todoArray") != nil {
                 todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
+                showAlert()
             }
+            
         }
         
         // 保存ボタンを押されたタイミングでキーボードを閉じる
         textView.resignFirstResponder()
+        
+    }
+    
+    // アラート
+    func showAlert() {
+        let alertController = UIAlertController(title: "成功", message: "保存に成功しました。", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action:UIAlertAction!) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     // 削除ボタンを押された時の処理
