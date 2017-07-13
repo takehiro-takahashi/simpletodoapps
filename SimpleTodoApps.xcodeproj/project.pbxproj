@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D4ADA991F171B0200261CAE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ADA971F171B0200261CAE /* RealmSwift.framework */; };
+		6D4ADA9A1F171B0200261CAE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4ADA981F171B0200261CAE /* Realm.framework */; };
 		6D51CD721F0A25280011E615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D51CD711F0A25280011E615 /* AppDelegate.swift */; };
 		6D51CD741F0A25280011E615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D51CD731F0A25280011E615 /* ViewController.swift */; };
 		6D51CD771F0A25280011E615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D51CD751F0A25280011E615 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D4ADA971F171B0200261CAE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		6D4ADA981F171B0200261CAE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		6D51CD6E1F0A25280011E615 /* SimpleTodoApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTodoApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D51CD711F0A25280011E615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D51CD731F0A25280011E615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D4ADA991F171B0200261CAE /* RealmSwift.framework in Frameworks */,
+				6D4ADA9A1F171B0200261CAE /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D4ADA961F171AFF00261CAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D4ADA971F171B0200261CAE /* RealmSwift.framework */,
+				6D4ADA981F171B0200261CAE /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D51CD651F0A25280011E615 = {
 			isa = PBXGroup;
 			children = (
 				6D51CD701F0A25280011E615 /* SimpleTodoApps */,
 				6D51CD6F1F0A25280011E615 /* Products */,
+				6D4ADA961F171AFF00261CAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +96,7 @@
 				6D51CD6A1F0A25280011E615 /* Sources */,
 				6D51CD6B1F0A25280011E615 /* Frameworks */,
 				6D51CD6C1F0A25280011E615 /* Resources */,
+				6D4ADA951F171AB300261CAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -137,6 +154,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D4ADA951F171AB300261CAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framewor",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D51CD6A1F0A25280011E615 /* Sources */ = {
@@ -271,6 +306,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EG3FTNAAP9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takehirotakahashi.me.becky;
@@ -285,6 +324,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EG3FTNAAP9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimpleTodoApps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = takehirotakahashi.me.becky;
