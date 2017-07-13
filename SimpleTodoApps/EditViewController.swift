@@ -86,13 +86,23 @@ class EditViewController: UIViewController, UITextViewDelegate {
             
             if UserDefaults.standard.object(forKey: "todoArray") != nil {
                 todoArray = UserDefaults.standard.object(forKey: "todoArray") as! [String]
-                showAlert()
             }
             
+        } else {
+            let alertController = UIAlertController(title: "エラー", message: "変更がなかったため、何もしませんでした。", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(action:UIAlertAction!) -> Void in
+                self.navigationController?.popViewController(animated: true)
+            })
+            alertController.addAction(alertAction)
+            present(alertController, animated: true, completion: nil)
         }
         
         // 保存ボタンを押されたタイミングでキーボードを閉じる
         textView.resignFirstResponder()
+        
+        // アラートを表示して一覧に戻る
+        showAlert()
         
     }
     
@@ -109,6 +119,11 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     // 削除ボタンを押された時の処理
     @IBAction func deleteTodo(_ sender: Any) {
+        deleteData()
+    }
+    
+    // 削除処理
+    func deleteData() {
         // 選択されたセルの行を削除
         todoArray.remove(at: selectedNumber)
         
